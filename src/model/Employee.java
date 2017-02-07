@@ -43,7 +43,11 @@ public class Employee {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-
+	
+	public int getId(){
+		return id;
+	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
