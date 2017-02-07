@@ -6,9 +6,9 @@ import javax.persistence.Entity;
 @Entity(name = "HourlyPaidEmployee")
 @DiscriminatorValue("hourly")
 public class HourlyPaidEmployee extends Employee {
-	private float hourRate;
+	private Float hourRate;
 
-	public HourlyPaidEmployee(String firstName, String lastName, float hourRate) {
+	public HourlyPaidEmployee(String firstName, String lastName, Float hourRate) {
 		super(firstName, lastName);
 		this.setHourRate(hourRate);
 	}
@@ -16,11 +16,11 @@ public class HourlyPaidEmployee extends Employee {
 	public HourlyPaidEmployee() {
 	}
 
-	public float getHourRate() {
+	public Float getHourRate() {
 		return hourRate;
 	}
 
-	public void setHourRate(float hourRate) {
+	public void setHourRate(Float hourRate) {
 		this.hourRate = hourRate;
 	}
 
