@@ -31,7 +31,7 @@ public class Employee {
 	private boolean inUnion;
 	private Date nextPayment;
 
-	@Column(name = "contractType")
+	@Column(name = "contractType", insertable = false, updatable = false)
 	private String contractType;
 
 	public Employee() {
