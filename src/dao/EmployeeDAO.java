@@ -38,19 +38,19 @@ public class EmployeeDAO {
 				.getSingleResult();
 		return employee;
 	}
-	
+
 	public HourlyPaidEmployee findHourlyPaidEmployeeById(int id) {
-		HourlyPaidEmployee employee = entityManager.createQuery("select e from Employee e where id = " + id, HourlyPaidEmployee.class)
-				.getSingleResult();
+		HourlyPaidEmployee employee = entityManager
+				.createQuery("select e from Employee e where id = " + id, HourlyPaidEmployee.class).getSingleResult();
 		return employee;
 	}
 
 	public FlatPaidEmployee findFlatPaidEmployeeById(int id) {
-		FlatPaidEmployee employee = entityManager.createQuery("select e from Employee e where id = " + id, FlatPaidEmployee.class)
-				.getSingleResult();
+		FlatPaidEmployee employee = entityManager
+				.createQuery("select e from Employee e where id = " + id, FlatPaidEmployee.class).getSingleResult();
 		return employee;
 	}
-	
+
 	public void add(Employee employee) {
 		entityManager.persist(employee);
 		entityManager.flush();
@@ -59,6 +59,11 @@ public class EmployeeDAO {
 	public void remove(Employee employee) {
 		Employee requiredEmployee = entityManager.contains(employee) ? employee : entityManager.merge(employee);
 		entityManager.createQuery("delete from Employee where id = '" + requiredEmployee.getId() + "'").executeUpdate();
+	}
+
+	public String getEmployeeType(int idEmp) {
+		Employee employee = findEmployeeById(idEmp);
+		return employee.getContractType();
 	}
 
 }
