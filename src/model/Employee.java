@@ -31,9 +31,11 @@ public class Employee implements Serializable {
 	private String paymentMethod;
 	private String bankAccount;
 	private String postalAddress;
-	private int weeklyDues;
+	private float weeklyDues = 0;
+	private float totalDues;
 	private boolean inUnion;
 	private Date nextPayment;
+	private Date lastPayment;
 
 	@Column(name = "contractType", insertable = false, updatable = false)
 	private String contractType;
@@ -92,11 +94,11 @@ public class Employee implements Serializable {
 		this.postalAddress = postalAddress;
 	}
 
-	public int getWeeklyDues() {
+	public float getWeeklyDues() {
 		return weeklyDues;
 	}
 
-	public void setWeeklyDues(int weeklyDues) {
+	public void setWeeklyDues(float weeklyDues) {
 		this.weeklyDues = weeklyDues;
 	}
 
@@ -122,6 +124,22 @@ public class Employee implements Serializable {
 
 	public void setContractType(String contractType) {
 		this.contractType = contractType;
+	}
+
+	public Date getLastPayment() {
+		return lastPayment;
+	}
+
+	public void setLastPayment(Date lastPayment) {
+		this.lastPayment = lastPayment;
+	}
+
+	public float getTotalDues() {
+		return totalDues;
+	}
+
+	public void setTotalDues(float totalDues) {
+		this.totalDues = totalDues;
 	}
 
 }

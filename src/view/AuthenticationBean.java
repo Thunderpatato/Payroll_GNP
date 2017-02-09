@@ -16,9 +16,7 @@ import controller.AuthenticationController;
 @SessionScoped
 @ManagedBean
 public class AuthenticationBean implements Serializable {
-	/**
-	 * serialVersionUIDNARDUZ
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	@Inject
