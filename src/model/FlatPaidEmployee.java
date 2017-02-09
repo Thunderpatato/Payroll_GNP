@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 @Entity(name = "FlatPaidEmployee")
 @DiscriminatorValue("flat")
 public class FlatPaidEmployee extends Employee {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Float monthlySalary;
 	private Float commissionRate;
 

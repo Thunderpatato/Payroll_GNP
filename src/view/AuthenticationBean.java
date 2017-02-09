@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import controller.AuthenticationController;
 
-@Named("AuthenticationBean")
+@Named("authenticationBean")
 @SessionScoped
 @ManagedBean
 public class AuthenticationBean implements Serializable {
@@ -38,6 +38,7 @@ public class AuthenticationBean implements Serializable {
 			FacesContext context = FacesContext.getCurrentInstance();
 			HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
 			session.setAttribute("id", idEmp);
+			System.out.println(userType);
 			return userType;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -55,7 +56,7 @@ public class AuthenticationBean implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "login";
+		return "unlogged";
 	}
 
 	public int getIdEmp() {

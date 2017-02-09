@@ -4,8 +4,11 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity(name = "HourlyPaidEmployee")
-@DiscriminatorValue("hourly")
+@DiscriminatorValue("Hourly")
 public class HourlyPaidEmployee extends Employee {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Float hourRate;
 
 	public HourlyPaidEmployee(String firstName, String lastName, Float hourRate) {

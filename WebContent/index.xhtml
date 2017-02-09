@@ -8,7 +8,22 @@
 
 </h:head>
 <h:body>
+	<p:growl id="msgs" showDetail="true" sticky="true" />
 
+	<h3>Welcome to Payroll application</h3>
+	<h4>Please, log in using your id as username</h4>
+	
+	<h:form id="form">
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Your ID:" />
+				<p:inputText id="id" value="#{authenticationBean.idEmp}" required="true"/>
+		
+				<p:outputLabel value="Your Password:" />
+				<p:inputText type="password" value="#{authenticationBean.password}" required="true"/>	
+		
+				<p:commandButton value="Login" ajax="false" icon="ui-icon-check" validateClient="true" action="#{authenticationBean.login()}"/>
+			</h:panelGrid>
+	</h:form>
 </h:body>
 
 </html>
