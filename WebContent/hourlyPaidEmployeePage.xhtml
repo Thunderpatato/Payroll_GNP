@@ -11,22 +11,82 @@
 	<p:growl id="growl" showDetail="true" sticky="true" />
 	<p:tabView orientation="left">
 		<p:tab title="Employee Info">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-				<h:outputText value="The story begins as Don Vito Corleone..." />
-			</h:panelGrid>
+			<h:form>
+				<h:outputText value="Id: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.id}" />
+
+				<h:outputText value="Name: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.firstName}" />
+
+				<h:outputText value="Last name: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.lastName}" />
+
+				<h:outputText value="Contract Type: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.contractType}" />
+
+				<p:outputLabel for="basic" value="Payment Method" />
+				<p:selectOneListbox id="basic"
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.paymentMethod}">
+					<f:selectItem itemLabel="Paymaster" itemValue="Paymaster" />
+					<f:selectItem itemLabel="Postal Address" itemValue="PostalAddress" />
+					<f:selectItem itemLabel="Bank Account" itemValue="BankAccount" />
+				</p:selectOneListbox>
+
+				<h:outputText value="Postal Address: " />
+				<h:inputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.postalAddress}" />
+
+				<h:outputText value="Bank Account: " />
+				<h:inputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.bankAccount}" />
+
+				<h:outputText value="Hourly Rate: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.hourRate}" />
+
+				<h:outputText value="Belongs to the Union: " />
+
+				<p:selectBooleanButton
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.inUnion}"
+					onLabel="Yes" offLabel="No" disabled="true" />
+				<h:outputText value="Weekly Dues: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.weeklyDues}" />
+
+				<h:outputText value="Total Dues: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.totalDues}" />
+
+				<h:outputText value="Last Payment: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.lastPayment}" />
+
+				<h:outputText value="Next Payment: " />
+				<h:outputText
+					value="#{hourlyPaidEmployeeBean.hourlyPaidEmployee.nextPayment}" />
+
+				<h:commandButton value="Update"
+					action="#{hourlyPaidEmployeeBean.updateInfo()}" />
+			</h:form>
 		</p:tab>
 		<p:tab title="Submit Time Card">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-				<h:outputText value="Francis Ford Coppola's legendary..." />
-			</h:panelGrid>
+			<h:form id="form">
+				<p:panelGrid columns="2">
+
+					<h:outputText value="Hours of work: " />
+					<h:inputText value="#{hourlyPaidEmployeeBean.timeCard.workedHours}" />
+
+					<h:commandButton value="Submit"
+						action="#{hourlyPaidEmployeeBean.submitTimeCard()}" />
+				</p:panelGrid>
+			</h:form>
 		</p:tab>
 		<p:tab title="Logout">
-			<h:panelGrid columns="2" cellpadding="10">
-				<p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-				<h:outputText value="After a break of more than 15 years..." />
-			</h:panelGrid>
+			<p:commandButton action="#{authenticationBean.logout()}"  value="Logout" />
 		</p:tab>
 	</p:tabView>
 </h:body>

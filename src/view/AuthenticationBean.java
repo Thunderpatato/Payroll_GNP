@@ -48,13 +48,12 @@ public class AuthenticationBean implements Serializable {
 	public String logout() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			HttpSession session;
-			session = (HttpSession) context.getExternalContext().getSession(true);
+			HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
 			session.invalidate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "unlogged";
+		return "index";
 	}
 
 	public int getIdEmp() {

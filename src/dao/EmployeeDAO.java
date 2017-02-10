@@ -41,13 +41,13 @@ public class EmployeeDAO {
 
 	public HourlyPaidEmployee findHourlyPaidEmployeeById(int id) {
 		HourlyPaidEmployee employee = entityManager
-				.createQuery("select e from Employee e where id = " + id, HourlyPaidEmployee.class).getSingleResult();
+				.createQuery("select e from HourlyPaidEmployee e where id = " + id, HourlyPaidEmployee.class).getSingleResult();
 		return employee;
 	}
 
 	public FlatPaidEmployee findFlatPaidEmployeeById(int id) {
 		FlatPaidEmployee employee = entityManager
-				.createQuery("select e from Employee e where id = " + id, FlatPaidEmployee.class).getSingleResult();
+				.createQuery("select e from FlatPaidEmployee e where id = " + id, FlatPaidEmployee.class).getSingleResult();
 		return employee;
 	}
 

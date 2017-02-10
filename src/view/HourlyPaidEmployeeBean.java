@@ -37,12 +37,12 @@ public class HourlyPaidEmployeeBean implements Serializable {
 	public void init() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
-		int id = (int) session.getAttribute("id");
+		int id = (Integer) session.getAttribute("id");
 		hourlyPaidEmployee = employeeController.findHourlyPaidEmployeeById(id);
 		timeCard = new TimeCard();
 	}
 
-	public void updateInfo() {
+	public String updateInfo() {
 		try {
 			int idEmp = hourlyPaidEmployee.getId();
 			String paymentMethod = hourlyPaidEmployee.getPaymentMethod();
@@ -54,9 +54,10 @@ public class HourlyPaidEmployeeBean implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
-	public void submitTimeCard() {
+	public String submitTimeCard() {
 		try {
 			timeCard.setHourlyPaidEmployee(hourlyPaidEmployee);
 			timeCardController.submitTimeCard(timeCard);
@@ -65,6 +66,7 @@ public class HourlyPaidEmployeeBean implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
 	}
 
 	public TimeCard getTimeCard() {

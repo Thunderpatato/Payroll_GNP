@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14865782431541" configfile="/Payroll_NGP/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="168" y="242" id="pf14865978948672" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14865978948673 pf14865978948674 pf14865978948675" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="adminPage.xhtml" x="540" y="24" id="pf14865978948676" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14865978948673" path="/adminPage.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="hourlyPaidEmployeePage.xhtml" x="504" y="242" id="pf14865978948677" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14865978948674" path="/hourlyPaidEmployeePage.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="flatPaidEmployeePage.xhtml" x="504" y="432" id="pf14865978948678" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14865978948675" path="/flatPaidEmployeePage.xhtml"/>
-  <links id="pf14865978948673" target="pf14865978948676" source="pf14865978948672" outcome="admin"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="562" id="pf14865978948672" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14865978948674 pf14865978948675 pf148673860216711" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adminPage.xhtml" x="374" y="792" id="pf14865978948676" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf148673860216711" path="/adminPage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="hourlyPaidEmployeePage.xhtml" x="338" y="178" id="pf14865978948677" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14865978948674" path="/hourlyPaidEmployeePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="flatPaidEmployeePage.xhtml" x="338" y="562" id="pf14865978948678" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14865978948675" path="/flatPaidEmployeePage.xhtml"/>
   <links id="pf14865978948674" target="pf14865978948677" source="pf14865978948672" outcome="hourly"/>
   <links id="pf14865978948675" target="pf14865978948678" source="pf14865978948672" outcome="flat"/>
+  <links id="pf148673860216711" target="pf14865978948676" source="pf14865978948672"/>
 </pageflow:Pageflow>
