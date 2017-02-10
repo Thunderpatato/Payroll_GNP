@@ -8,5 +8,77 @@
 
 </h:head>
 <h:body>
+	<p:growl id="growl" showDetail="true" sticky="true" />
+	<p:tabView orientation="left">
+		<p:tab title="Employee Info">
+			<p:panelGrid columns="2">
+				<h:form>
+					<h:outputText value="Id: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.id}" />
+
+					<h:outputText value="Name: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.firstName}" />
+
+					<h:outputText value="Last name: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.lastName}" />
+
+					<h:outputText value="Contract Type: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.contractType}" />
+
+					<p:outputLabel for="basic" value="Payment Method:" />
+					<p:selectOneListbox id="basic"
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.paymentMethod}">
+						<f:selectItem itemLabel="Paymaster" itemValue="Paymaster" />
+						<f:selectItem itemLabel="Postal Address" itemValue="PostalAddress" />
+						<f:selectItem itemLabel="Bank Account" itemValue="BankAccount" />
+					</p:selectOneListbox>
+
+					<h:outputText value="Postal Address: " />
+					<h:inputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.postalAddress}" />
+
+					<h:outputText value="Bank Account: " />
+					<h:inputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.bankAccount}" />
+
+					<h:outputText value="Monthly Salary: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.monthlySalary}" />
+					
+					<h:outputText value="Commission Rate: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.commissionRate}" />
+
+					<h:outputText value="Belongs to the Union: " />
+
+					<p:selectBooleanButton
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.inUnion}"
+						onLabel="Yes" offLabel="No" disabled="true" />
+					<h:outputText value="Weekly Dues: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.weeklyDues}" />
+
+					<h:outputText value="Total Dues: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.totalDues}" />
+
+					<h:outputText value="Last Payment: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.lastPayment}" />
+
+					<h:outputText value="Next Payment: " />
+					<h:outputText
+						value="#{flatPaidEmployeeBean.flatPaidEmployee.nextPayment}" />
+
+					<h:commandButton value="Update"
+						action="#{flatPaidEmployeeBean.updateInfo()}" />
+				</h:form>
+			</p:panelGrid>
+		</p:tab>
+	</p:tabView>
 </h:body>
 </html>

@@ -41,13 +41,15 @@ public class EmployeeDAO {
 
 	public HourlyPaidEmployee findHourlyPaidEmployeeById(int id) {
 		HourlyPaidEmployee employee = entityManager
-				.createQuery("select e from HourlyPaidEmployee e where id = " + id, HourlyPaidEmployee.class).getSingleResult();
+				.createQuery("select e from HourlyPaidEmployee e where id = " + id, HourlyPaidEmployee.class)
+				.getSingleResult();
 		return employee;
 	}
 
 	public FlatPaidEmployee findFlatPaidEmployeeById(int id) {
 		FlatPaidEmployee employee = entityManager
-				.createQuery("select e from FlatPaidEmployee e where id = " + id, FlatPaidEmployee.class).getSingleResult();
+				.createQuery("select e from FlatPaidEmployee e where id = " + id, FlatPaidEmployee.class)
+				.getSingleResult();
 		return employee;
 	}
 
@@ -68,7 +70,13 @@ public class EmployeeDAO {
 	}
 
 	public Employee modifyByServiceCharge(int idEmp, float totalDues) {
-		entityManager.createQuery("update Employee set totalDues = " + totalDues + " where id = " + idEmp).executeUpdate();
+		entityManager.createQuery("update Employee set totalDues = " + totalDues + " where id = " + idEmp)
+				.executeUpdate();
+		return findEmployeeById(idEmp);
+	}
+
+	public Employee modifyDues(int idEmp, float dues) {
+		entityManager.createQuery("update Employee set totalDues = " + dues + " where id = " + idEmp).executeUpdate();
 		return findEmployeeById(idEmp);
 	}
 
