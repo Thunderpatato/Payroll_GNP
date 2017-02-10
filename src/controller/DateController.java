@@ -1,4 +1,4 @@
-package date;
+package controller;
 
 import java.sql.Date;
 import java.time.DayOfWeek;
@@ -8,7 +8,7 @@ import java.time.temporal.TemporalAdjusters;
 import javax.ejb.Stateless;
 
 @Stateless
-public class DateUtils {
+public class DateController {
 
 	private LocalDate endOfThisMonth(LocalDate date) {
 		date = date.with(TemporalAdjusters.lastDayOfMonth());

@@ -5,6 +5,6 @@
   <nodes xsi:type="pageflow:PFPage" name="hourlyPaidEmployeePage.xhtml" x="504" y="242" id="pf14865978948677" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14865978948674" path="/hourlyPaidEmployeePage.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="flatPaidEmployeePage.xhtml" x="504" y="432" id="pf14865978948678" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14865978948675" path="/flatPaidEmployeePage.xhtml"/>
   <links id="pf14865978948673" target="pf14865978948676" source="pf14865978948672" outcome="admin"/>
-  <links id="pf14865978948674" target="pf14865978948677" source="pf14865978948672" outcome="Hourly"/>
+  <links id="pf14865978948674" target="pf14865978948677" source="pf14865978948672" outcome="hourly"/>
   <links id="pf14865978948675" target="pf14865978948678" source="pf14865978948672" outcome="flat"/>
 </pageflow:Pageflow>

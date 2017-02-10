@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import dao.SalesCardDAO;
-import date.DateUtils;
 import model.SalesCard;
 
 @Stateless
@@ -16,7 +15,7 @@ public class SalesCardController {
 	SalesCardDAO salesCardDAO;
 
 	@Inject
-	DateUtils dateUtils;
+	DateController dateController;
 
 	Logger logger = Logger.getLogger(SalesCardController.class);
 
@@ -26,7 +25,7 @@ public class SalesCardController {
 	}
 
 	public void submitSalesCard(SalesCard salesCard) {
-		salesCard.setSelectedData(dateUtils.today());
+		salesCard.setSelectedData(dateController.today());
 		salesCardDAO.submitSalesCard(salesCard);
 	}
 }

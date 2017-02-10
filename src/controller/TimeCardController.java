@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import org.apache.log4j.Logger;
 
 import dao.TimeCardDAO;
-import date.DateUtils;
 import model.TimeCard;
 
 @Stateless
@@ -20,7 +19,7 @@ public class TimeCardController {
 	TimeCardDAO timeCardDAO;
 
 	@Inject
-	DateUtils dateUtils;
+	DateController dateController;
 
 	Logger logger = Logger.getLogger(TimeCardController.class);
 
@@ -30,7 +29,7 @@ public class TimeCardController {
 	}
 
 	public void submitTimeCard(TimeCard timeCard){
-		Date date = dateUtils.today();
+		Date date = dateController.today();
 		timeCard.setSelectedDate(date);
 		List<TimeCard> timeCards = timeCardDAO.findAllTheTimeCardsBetweenDates(timeCard.getHourlyPaidEmployee().getId(), date, date);
 		if (timeCards.isEmpty()){
