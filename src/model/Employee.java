@@ -32,7 +32,7 @@ public class Employee implements Serializable {
 	private String bankAccount;
 	private String postalAddress;
 	private float weeklyDues = 0;
-	private float totalDues;
+	private float totalDues = 0;
 	private boolean inUnion;
 	private Date nextPayment;
 	private Date lastPayment;

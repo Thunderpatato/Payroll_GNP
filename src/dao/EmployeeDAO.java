@@ -56,6 +56,22 @@ public class EmployeeDAO {
 		entityManager.flush();
 	}
 
+	public Employee modifyByEmployee(int idEmp, String paymentMethod, String postalAddress, String bankAccount) {
+		entityManager.createQuery("update Employee set paymentMethod = '" + paymentMethod + "', postalAddress = '"
+				+ postalAddress + "', bankAccount = '" + bankAccount + "' where id = " + idEmp).executeUpdate();
+		return findEmployeeById(idEmp);
+	}
+
+	public void modifyByAdmin(Employee employee) {
+		entityManager.merge(employee);
+		entityManager.flush();
+	}
+
+	public Employee modifyByServiceCharge(int idEmp, float totalDues) {
+		entityManager.createQuery("update Employee set totalDues = " + totalDues + " where id = " + idEmp).executeUpdate();
+		return findEmployeeById(idEmp);
+	}
+
 	public void remove(Employee employee) {
 		Employee requiredEmployee = entityManager.contains(employee) ? employee : entityManager.merge(employee);
 		entityManager.createQuery("delete from Employee where id = '" + requiredEmployee.getId() + "'").executeUpdate();

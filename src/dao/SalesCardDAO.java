@@ -16,11 +16,11 @@ public class SalesCardDAO {
 	@PersistenceContext
 	EntityManager entityManager;
 
-	public void submitSaleCard(SalesCard saleCard) {
+	public void submitSalesCard(SalesCard salesCard) {
 		FlatPaidEmployee flatPaidEmployee = entityManager.find(FlatPaidEmployee.class,
-				saleCard.getFlatPaidEmployee().getId());
-		saleCard.setFlatPaidEmployee(flatPaidEmployee);
-		entityManager.persist(saleCard);
+				salesCard.getFlatPaidEmployee().getId());
+		salesCard.setFlatPaidEmployee(flatPaidEmployee);
+		entityManager.persist(salesCard);
 		entityManager.flush();
 	}
 
