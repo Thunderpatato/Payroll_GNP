@@ -1,6 +1,7 @@
 package controller;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import org.apache.log4j.Logger;
@@ -8,6 +9,7 @@ import dao.EmployeeDAO;
 import model.FlatPaidEmployee;
 import model.HourlyPaidEmployee;
 
+@Stateless
 public class EmployeeController {
 
 	Logger logger = Logger.getLogger(EmployeeController.class);
@@ -31,8 +33,8 @@ public class EmployeeController {
 		FlatPaidEmployee flatPaidEmployee = employeeDAO.findFlatPaidEmployeeById(idEmp);
 		return flatPaidEmployee;
 	}
-	
-	public String findEmployeeContractType(int idEmp){
+
+	public String findEmployeeContractType(int idEmp) {
 		return employeeDAO.getEmployeeType(idEmp);
 	}
 

@@ -37,12 +37,12 @@ public class TimeCard {
 		this.workedHours = workedHours;
 	}
 
-	public Date getSelecteDate() {
+	public Date getSelectedDate() {
 		return selectedDate;
 	}
 
-	public void setSelecteDate(Date selecteDate) {
-		this.selectedDate = selecteDate;
+	public void setSelectedDate(Date selectedDate) {
+		this.selectedDate = selectedDate;
 	}
 
 	public HourlyPaidEmployee getHourlyPaidEmployee() {
