@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -33,6 +34,12 @@ public class EmployeeDAO {
 		return employeeList;
 	}
 
+	public List<Employee> findAllEmployeesInUnion() {
+		List<Employee> employees = entityManager
+				.createQuery("select e from Employee e where inUnion = true", Employee.class).getResultList();
+		return employees;
+	}
+
 	public Employee findEmployeeById(int id) {
 		Employee employee = entityManager.createQuery("select e from Employee e where id = " + id, Employee.class)
 				.getSingleResult();
@@ -51,6 +58,21 @@ public class EmployeeDAO {
 				.createQuery("select e from FlatPaidEmployee e where id = " + id, FlatPaidEmployee.class)
 				.getSingleResult();
 		return employee;
+	}
+
+	public List<Employee> findAlltoPay(Date date) {
+		List<Employee> employeesToPay = entityManager
+				.createQuery("select e from Employee e where nextPayment = '" + date + "'", Employee.class)
+				.getResultList();
+		return employeesToPay;
+	}
+
+	public List<Employee> findAllPaid(Date date) {
+		List<Employee> employeesPaid = entityManager
+				.createQuery("select e from Employee e where lastPayment = '" + date + "'", Employee.class)
+				.getResultList();
+		return employeesPaid;
+
 	}
 
 	public void add(Employee employee) {

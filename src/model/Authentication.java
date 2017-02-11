@@ -21,12 +21,12 @@ public class Authentication {
 	private Employee employee;
 
 	private String password;
-	private String isAdmin;
+	private boolean isAdmin;
 
 	public Authentication() {
 	}
 
-	public Authentication(Employee employee, String password, String isAdmin) {
+	public Authentication(Employee employee, String password, boolean isAdmin) {
 		this.employee = employee;
 		this.password = password;
 		this.isAdmin = isAdmin;
@@ -48,11 +48,11 @@ public class Authentication {
 		this.password = password;
 	}
 
-	public String isAdmin() {
+	public boolean isAdmin() {
 		return isAdmin;
 	}
 
-	public void setAdmin(String isAdmin) {
+	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}
 }

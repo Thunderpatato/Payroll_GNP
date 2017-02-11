@@ -23,7 +23,7 @@ public class AuthenticationDAO {
 		Authentication authentication = entityManager.createQuery(
 				"select l from Authentication l where idEmp = " + idEmp + "and password = '" + password + "'",
 				Authentication.class).getSingleResult();
-		if (authentication.isAdmin().equals("YES")) {
+		if (authentication.isAdmin() == Boolean.TRUE) {
 			return "admin";
 		} else
 			return "employee";
